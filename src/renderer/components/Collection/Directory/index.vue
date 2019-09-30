@@ -2,12 +2,14 @@
     <div class="DirectoryList">
         <ul>
             <li v-for="rw in DirectoryList" >
-                <div v-on:click="activeDirectory(rw.id)" class="title">
-                    <i class="fas fa-caret-right"></i>
-                    <i class="fas fa-folder"></i>
-                    <span>{{rw.title}}</span>
+                <div class="title">
+                    <div v-on:click="activeDirectory(rw.id)">
+                        <i class="fas fa-caret-right"></i>
+                        <i class="fas fa-folder"></i>
+                        <span>{{rw.title}}</span>
+                    </div>
                 </div>
-                <ul v-for="nrow in rw.list" v-bind:class="{show:(DirectoryActiveId==rw.id)}" class="sub animated fadeIn">
+                <ul v-for="nrow in rw.list" v-bind:class="{show:(DirectoryActiveId==rw.id)}" class="sub">
                     <li>
                         <span v-bind:class="nrow.method" class="API POST">{{nrow.method}}</span>
                         <span class="_name">{{nrow.title}}</span>
@@ -27,7 +29,7 @@
         },
         data() {
             return {
-                DirectoryActiveId:0,
+                DirectoryActiveId:10001,
                 DirectoryList: [
                     {
                         'id':10001,
@@ -42,7 +44,11 @@
                                 'title': 'get Charge'
                             },
                             {
-                                'method': 'POST',
+                                'method': 'DEL',
+                                'title': 'Reverce Charge'
+                            },
+                            {
+                                'method': 'PATCH',
                                 'title': 'Reverce Charge'
                             }
                         ]
@@ -70,12 +76,11 @@
     div.DirectoryList {
         position: absolute;
         margin: 0;
-        border-radius: 2px;
         background: #1a1a1a;
         bottom: 0;
         left: 0;
         right: 0;
-        top: 86px;
+        top: 90px;
     }
 
     div.DirectoryList ul li {
@@ -104,6 +109,10 @@
     div.DirectoryList > ul > li div.title {
         padding: 8px 10px;
     }
+    div.DirectoryList > ul > li div.title > div{
+        width: calc(100% - 50px);
+        display: block;
+    }
 
     div.DirectoryList > ul > li:not(:last-child) {
         border-bottom: 1px solid rgba(255, 255, 255, 0.03);
@@ -123,11 +132,10 @@
     }
 
     div.DirectoryList ul li ul.sub li {
-        padding: 8px 0;
+        padding: 5px 0;
     }
-
-    div.DirectoryList ul li ul.sub li:not(:last-child) {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    div.DirectoryList > ul > li > ul.sub li {
+        margin: 0;
     }
 
     span._name {

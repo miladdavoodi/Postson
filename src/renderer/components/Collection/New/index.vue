@@ -7,11 +7,11 @@
 <style scoped>
     div.baseColor {
         position: relative;
-        margin: 5px 10px;
-        border-radius: 2px;
+        margin: 5px 0;
         font-weight: bold;
         cursor: pointer;
-        padding: 5px 0;
+        padding: 8px 0 11px 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
     }
     div.baseColor i{
         font-size: 10px;

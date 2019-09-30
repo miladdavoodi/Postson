@@ -40,7 +40,26 @@
         color: #ffc600 !important;
     }
     .API.GET{
-        color: #00baff !important;
+        color: #12b99c !important;
+    }
+    .API.PUT{
+        color: #1b62cc !important;
+    }
+    .API.PATCH,
+    .API.HEAD,
+    .API.OPTIONS,
+    .API.LINK,
+    .API.UNLINK,
+    .API.PURGE,
+    .API.LOCK,
+    .API.UNLOCK,
+    .API.PROPFIND,
+    .API.VIEW,
+    .API.COPY{
+        color: #999 !important;
+    }
+    .API.DEL{
+        color: #cc1b34 !important;
     }
     div.contentBox{
         background: #292929;
