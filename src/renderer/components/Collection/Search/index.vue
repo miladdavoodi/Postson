@@ -9,8 +9,8 @@
         position: relative;
         margin: 10px;
         height: 35px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 2px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
     }
 
     div.search input {
@@ -30,6 +30,6 @@
         position: absolute;
         color: rgba(255, 255, 255, 0.3);
         left: 10px;
-        top: 8px;
+        top: 10px;
     }
 </style>

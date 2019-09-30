@@ -29,9 +29,12 @@
     .baseColor{
         color: #00ff5a;
     }
+    .baseColorBg{
+        background: #00ff5a;
+    }
     .API{
         font-weight: bold;
-        font-size: 9px;
+        font-size: 9px !important;
         display: inline-block;
         padding: 5px 10px;
         width: 24px;
