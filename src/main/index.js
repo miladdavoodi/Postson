@@ -24,14 +24,19 @@ function createWindow () {
     //center: true,
     useContentSize: true,
     width: 984
-  })
+  });
+
+
 
 
   mainWindow.loadURL(winURL)
 
   mainWindow.on('closed', () => {
     mainWindow = null
-  })
+  });
+
+  require('../menu/mainmenu')
+
 }
 
 app.on('ready', createWindow)
