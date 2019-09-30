@@ -2,8 +2,9 @@
 
 > The Collaboration Platform for API Development
 
-# The final design will do so
-# View of the future
+> The final design will do so
+> View of the future
+![](ui.jpg)
 
 #### Build Setup
 
