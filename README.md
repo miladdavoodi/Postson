@@ -2,6 +2,9 @@
 
 > The Collaboration Platform for API Development
 
+# The final design will do so
+# View of the future
+
 #### Build Setup
 
 ``` bash
