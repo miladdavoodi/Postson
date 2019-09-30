@@ -21,7 +21,7 @@
     div.box{
         position: relative;
         height: calc(100vh - 42px);
-        background: rgba(255,255,255,0.03);
+        background: #24292e;
         border-right: 1px solid rgba(255,255,255,0.1);
         width: 250px;
         float: left;

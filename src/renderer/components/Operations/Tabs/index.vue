@@ -26,7 +26,7 @@
     div.TabList .tab{
         cursor: pointer;
         display: inline-block;
-        background: #2d2d2d;
+        background: #2f363c;
         padding: 8px 4px 4px 4px;
         position: relative;
         border-radius: 8px 8px 0 0;
@@ -63,7 +63,7 @@
         margin-right: 10px;
     }
     div.UrlMtd{
-        background: #2d2d2d;
+        background: #2f363c;
         height: 50px;
     }
 </style>

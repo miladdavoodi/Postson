@@ -8,8 +8,8 @@
 <style scoped>
     div.bar{
         height: 40px;
-        background: rgba(255,255,255,0.03);
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        background: #171a1e;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
     }
     div.bar ul{
         float: left;

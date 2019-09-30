@@ -13,7 +13,7 @@
 </script>
 <style scoped>
     div.box{
-        background: #1a1a1a;
+        background: #1c2024;
         height: calc(100vh - 42px);
         width: calc(100vw - 251px);
         float: left;

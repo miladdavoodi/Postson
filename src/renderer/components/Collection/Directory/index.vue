@@ -76,7 +76,7 @@
     div.DirectoryList {
         position: absolute;
         margin: 0;
-        background: #1a1a1a;
+        background: #1c2024;
         bottom: 0;
         left: 0;
         right: 0;
@@ -127,7 +127,7 @@
     }
 
     div.DirectoryList ul li ul.sub {
-        background: #101010;
+        background: #171a1e;
         display: none;
     }
 
