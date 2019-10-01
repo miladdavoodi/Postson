@@ -3,7 +3,7 @@
         <Tabs/>
         <div class="fixed">
             <Params/>
-
+            <Response/>
         </div>
     </div>
 </template>
@@ -16,10 +16,12 @@
 <script>
     import Tabs from './tab';
     import Params from './params';
+    import Response from './Response';
     export default {
         components:{
             Tabs,
-            Params
+            Params,
+            Response
         }
     }
 </script>

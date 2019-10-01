@@ -20,9 +20,10 @@
         display: block;
         padding: 12px 8px;
         color: #888;
-        font-weight: bold;
-        font-size: 11px;
+        font-size: 13px;
+        background: #1c2024;
         border-bottom: 1px solid  rgba(255,255,255,0.1);
+        border-top: 1px solid  rgba(255,255,255,0.1);
     }
     div.checkbox{
         width: 15px;
