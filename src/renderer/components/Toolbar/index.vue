@@ -1,7 +1,7 @@
 <template>
     <div class="bar">
         <ul>
-            <li></li>
+            <li><div class="logo"></div> </li>
         </ul>
     </div>
 </template>
@@ -10,6 +10,8 @@
         height: 40px;
         background: #171a1e;
         border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    div.logo{
     }
     div.bar ul{
         float: left;

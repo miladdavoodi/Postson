@@ -153,7 +153,7 @@
     }
 
     div.DirectoryList ul li ul.sub {
-        background: #171a1e;
+        background: rgba(0, 0, 0, 0.8);
         display: none;
     }
 
@@ -171,7 +171,7 @@
     }
 
     div.DirectoryList ul li ul.sub li:hover span._name {
-        color: #999 !important;
+        color: #eee !important;
     }
     div.DirectoryList ul li ul.sub.show{
         display: block;

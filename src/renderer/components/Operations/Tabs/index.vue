@@ -43,7 +43,6 @@
         background: #2f363c;
         padding: 8px 4px 4px 4px;
         position: relative;
-        border-radius: 8px 8px 0 0;
         min-width: 20px;
         text-align: center;
         margin-right: 1px;
