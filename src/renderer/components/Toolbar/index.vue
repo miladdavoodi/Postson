@@ -12,6 +12,12 @@
         border-bottom: 1px solid rgba(255,255,255,0.2);
     }
     div.logo{
+        background: url("../../assets/logoType.png");
+        background-size: cover;
+        height: 12px;
+        width: 83px;
+        position:relative;
+        top: 5px;
     }
     div.bar ul{
         float: left;
