@@ -1,17 +1,13 @@
 <template>
     <div>
         <div class="TabList">
-            <div class="tab active">
+            <div v-for="row in TabsList" class="tab animated fadeInUp">
                 <div class="baseColorBg"></div>
-                <span class="API POST">POST</span>
-                <span>Result Charge</span>
+                <span v-bind:class="row.method" class="API POST">{{row.method}}</span>
+                <span>{{row.title}}</span>
+                <i class="fas fa-remove"></i>
             </div>
-            <div class="tab">
-                <div class="baseColorBg"></div>
-                <span class="API POST">POST</span>
-                <span>Result Charge</span>
-            </div>
-            <div class="tab plus">
+            <div v-if="TabsList.length<=4" v-on:click="addTab" class="tab plus">
                 <span><i class="fa fa-plus"></i></span>
             </div>
         </div>
@@ -26,18 +22,43 @@
 <script>
     import Url from './url';
     import Query from './Query/index';
+
     export default {
-        components:{
+        data() {
+            return {
+                TabsList: [
+                    {
+                        '_id': 2143522,
+                        'method': 'POST',
+                        'title': 'Result Charge',
+                    }
+                ]
+            }
+        },
+        methods: {
+            addTab: function () {
+
+                this.TabsList.push({
+                    '_id': 2143522,
+                    'method': 'GET',
+                    'title': 'Untitled',
+                });
+
+
+            }
+        },
+        components: {
             Url,
             Query
         }
     }
 </script>
 <style scoped>
-    div.TabList{
+    div.TabList {
         margin: 10px 0 0 10px;
     }
-    div.TabList .tab{
+
+    div.TabList .tab {
         cursor: pointer;
         display: inline-block;
         background: #2f363c;
@@ -45,9 +66,10 @@
         position: relative;
         min-width: 20px;
         text-align: center;
-        margin-right: 1px;
+        margin-right: 3px;
     }
-    div.TabList .tab .baseColorBg{
+
+    div.TabList .tab .baseColorBg {
         width: 100%;
         height: 3px;
         position: absolute;
@@ -55,27 +77,33 @@
         left: 0;
         border-radius: 8px 8px 0 0;
     }
-    div.TabList .tab:not(.active) .baseColorBg{
+
+    div.TabList .tab:not(.active) .baseColorBg {
         background: #444;
     }
-    .plus{
+
+    .plus {
         background: none !important;
         cursor: pointer;
     }
-    .plus i{
+
+    .plus i {
         font-size: 12px;
         position: relative;
         top: -2px;
     }
-    div.TabList .tab span{
+
+    div.TabList .tab span {
         color: #999;
         font-size: 13px;
         display: inline-block;
     }
-    div.TabList .tab span:nth-child(3){
+
+    div.TabList .tab span:nth-child(3) {
         margin-right: 10px;
     }
-    div.UrlMtd{
+
+    div.UrlMtd {
         background: #2f363c;
         height: 50px;
     }
