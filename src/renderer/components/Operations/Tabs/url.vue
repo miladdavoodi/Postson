@@ -6,7 +6,7 @@
                 <i class="fas fa-caret-down"></i>
             </div>
             <div class="url">
-                <input placeholder="url the address">
+                <input placeholder="url the address" value="http://127.0.0.1:8945:ws/v2/blog/getpost">
             </div>
         </div>
     </div>
@@ -59,7 +59,7 @@
         top: 2px;
         padding: 5px;
         background: none;
-        color: #ccc;
+        color: #fff;
         outline: none;
     }
 </style>
