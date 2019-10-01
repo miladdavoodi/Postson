@@ -18,12 +18,12 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    height: 563,
-    minWidth: 984,
-    minHeight: 563,
+    height: 663,
+    minWidth: 1114,
+    minHeight: 663,
     //center: true,
     useContentSize: true,
-    width: 984
+    width: 1114
   });
 
 

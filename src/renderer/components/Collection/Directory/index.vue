@@ -1,5 +1,6 @@
 <template>
     <div class="DirectoryList">
+
         <ul>
             <li v-for="rw in DirectoryList" >
                 <div class="title">
@@ -18,10 +19,13 @@
                 </ul>
             </li>
         </ul>
+
     </div>
 </template>
 <script>
     export default {
+        components:{
+        },
         methods:{
             activeDirectory:function (id) {
                 let _DirId = this.DirectoryActiveId;
@@ -51,7 +55,11 @@
                             {
                                 'method': 'PATCH',
                                 'title': 'Reverce Charge'
-                            }
+                            },
+                            {
+                                'method': 'POST',
+                                'title': 'Result Charge'
+                            },
                         ]
                     },
                     {
@@ -82,6 +90,7 @@
         left: 0;
         right: 0;
         top: 90px;
+        overflow: auto;
     }
 
     div.DirectoryList ul li {
