@@ -11,10 +11,15 @@
 </script>
 
 <style>
+  *, *::after, *::before {
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-app-region: no-drag;
+    cursor: default;
+  }
   ul,li,body,html,p,h1,h2{
     margin: 0;
     padding: 0;
-    user-select: none;
   }
   ::-webkit-scrollbar {
     background-color: rgba(0,0,0,0.2);
