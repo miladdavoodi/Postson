@@ -15,10 +15,19 @@
                 <span><i class="fa fa-plus"></i></span>
             </div>
         </div>
-        <div class="UrlMtd"></div>
+        <div class="UrlMtd">
+            <Url/>
+        </div>
     </div>
 </template>
-
+<script>
+    import Url from './url';
+    export default {
+        components:{
+            Url
+        }
+    }
+</script>
 <style scoped>
     div.TabList{
         margin: 10px 0 0 10px;
