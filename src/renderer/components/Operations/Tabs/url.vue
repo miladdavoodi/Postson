@@ -8,6 +8,7 @@
             <div class="url">
                 <input placeholder="url the address" value="http://127.0.0.1:8945:ws/v2/blog/getpost">
             </div>
+            <div class="send"><span>SEND</span></div>
         </div>
     </div>
 </template>
@@ -46,8 +47,30 @@
     div.url{
         position: relative;
         height: 30px;
-        width: calc(100% - 81px);
+        width: calc(100% - 191px);
         float: left;
+        background: none;
+    }
+    div.send{
+        position: relative;
+        height: 32px;
+        width: 110px;
+        float: left;
+        background: #295afc;
+        border-radius: 0 4px 4px 0;
+        top: -1px;
+        cursor: pointer;
+        right: -1px;
+    }
+    div.send:hover{
+        background: #4d76ff;
+    }
+    div.send span{
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        color: #fff;
+        line-height: 2.4;
     }
     div.url input{
         border: none;
