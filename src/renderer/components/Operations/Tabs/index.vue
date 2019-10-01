@@ -18,13 +18,18 @@
         <div class="UrlMtd">
             <Url/>
         </div>
+        <div>
+            <Query/>
+        </div>
     </div>
 </template>
 <script>
     import Url from './url';
+    import Query from './Query/index';
     export default {
         components:{
-            Url
+            Url,
+            Query
         }
     }
 </script>
