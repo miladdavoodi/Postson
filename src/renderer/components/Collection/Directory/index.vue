@@ -4,10 +4,11 @@
             <li v-for="rw in DirectoryList" >
                 <div class="title">
                     <div v-on:click="activeDirectory(rw.id)">
-                        <i class="fas fa-caret-right"></i>
+                        <i v-bind:class="{'fa-caret-down':(DirectoryActiveId==rw.id),'fa-caret-right':(DirectoryActiveId!=rw.id)}" class="fas "></i>
                         <i class="fas fa-folder"></i>
-                        <span>{{rw.title}}</span>
+                        <span>{{rw.title}} <i>/ {{rw.list.length}}</i></span>
                     </div>
+                    <i class="fas fa-ellipsis-h"></i>
                 </div>
                 <ul v-for="nrow in rw.list" v-bind:class="{show:(DirectoryActiveId==rw.id)}" class="sub">
                     <li>
@@ -105,9 +106,25 @@
         color: #999;
         font-weight: bold;
     }
+    div.DirectoryList > ul > li span i{
+        font-weight: normal;
+        font-size: 11px;
+    }
 
     div.DirectoryList > ul > li div.title {
         padding: 8px 10px;
+        position: relative;
+    }
+    div.DirectoryList > ul > li div.title i.fa-ellipsis-h{
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        opacity: 0;
+        color: #ccc;
+        transition: all 0.3s;
+    }
+    div.DirectoryList > ul > li:hover div.title i.fa-ellipsis-h{
+        opacity: 1;
     }
     div.DirectoryList > ul > li div.title > div{
         width: calc(100% - 50px);
