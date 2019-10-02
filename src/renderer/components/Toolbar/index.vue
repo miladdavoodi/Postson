@@ -2,6 +2,7 @@
     <div class="bar">
         <ul>
             <li><div class="logo"></div> </li>
+            <li><div class="team">TEAM</div> </li>
         </ul>
     </div>
 </template>
@@ -25,5 +26,18 @@
     }
     div.bar ul li{
         float: left;
+        margin-right: 20px;
+    }
+    div.team{
+        background: rgba(255,255,255,0.2);
+        color: #ccc;
+        cursor: pointer;
+        padding: 5px 10px;
+        position: relative;
+        top: -2px;
+        border-radius: 4px;
+    }
+    div.team:hover{
+        color: #fff;
     }
 </style>
