@@ -2,30 +2,52 @@
     <div>
         <div class="title">Query Params</div>
         <div class="rowtbl">
-            <div v-for="n in 2" class="_row">
+            <div v-for="item in listParams" class="_row">
                 <div class="check">
-
                     <div class="checkbox"><i class="fas fa-check"></i></div>
-
                 </div>
-                <div class="key"><input placeholder="KEY"></div>
-                <div class="value"><input placeholder="VALUE"></div>
+                <div class="key"><input v-on:keydown="addParam" v-model="item.KEY" placeholder="KEY"></div>
+                <div class="value"><input v-model="item.VALUE" placeholder="VALUE"></div>
             </div>
         </div>
     </div>
 </template>
+<script>
+    export default {
+        data() {
+            return {
+                listParams: [
+                    {KEY: "", VALUE: "", ACTIVE: false}
+                ]
+            }
+        },
+        methods: {
+            addParam: function () {
 
+                if (this.listParams[this.listParams.length - 1].KEY) {
+                    this.listParams.push({
+                        KEY: "",
+                        VALUE: "",
+                        ACTIVE: false
+                    })
+                }
+
+            }
+        }
+    }
+</script>
 <style scoped>
-    div.title{
+    div.title {
         display: block;
         padding: 12px 8px;
         color: #888;
         font-size: 13px;
         background: #1c2024;
-        border-bottom: 1px solid  rgba(255,255,255,0.1);
-        border-top: 1px solid  rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
-    div.checkbox{
+
+    div.checkbox {
         width: 15px;
         height: 15px;
         background: #666;
@@ -35,35 +57,42 @@
         cursor: pointer;
         text-align: center;
     }
-    div.checkbox i{
+
+    div.checkbox i {
         color: #00ff5a;
         font-size: 11px;
         display: inline-block;
     }
-    div._row{
+
+    div._row {
         text-align: center;
         height: 30px;
-        background: rgba(0,0,0,0.2);
-        border-bottom: 1px solid  rgba(255,255,255,0.1);
+        background: rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    div._row > div{
+
+    div._row > div {
         float: left;
     }
-    div._row > div.check{
+
+    div._row > div.check {
         width: 40px;
         height: 30px;
-        border-right: 1px solid  rgba(255,255,255,0.1);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
     }
-    div._row > div.key{
+
+    div._row > div.key {
         width: 180px;
         height: 30px;
-        border-right: 1px solid  rgba(255,255,255,0.1);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
     }
-    div._row > div.value{
+
+    div._row > div.value {
         width: calc(100% - 240px);
         height: 30px;
     }
-    div._row > div input{
+
+    div._row > div input {
         border: none;
         padding: 7px;
         width: calc(100% - 15px);

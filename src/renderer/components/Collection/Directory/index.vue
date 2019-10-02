@@ -168,7 +168,7 @@
     span._name {
         font-size: 12px;
         font-weight: normal !important;
-        color: #666 !important;
+        color: #999 !important;
     }
 
     div.DirectoryList ul li ul.sub li:hover span._name {
