@@ -5,7 +5,7 @@
                 <div class="baseColorBg"></div>
                 <span v-bind:class="row.method" class="API POST">{{row.method}}</span>
                 <span>{{row.title}}</span>
-                <i class="fas fa-remove"></i>
+                <i class="fas fa-times"></i>
             </div>
             <div v-if="TabsList.length<=4" v-on:click="addTab" class="tab plus">
                 <span><i class="fa fa-plus"></i></span>
@@ -91,6 +91,11 @@
         font-size: 12px;
         position: relative;
         top: -2px;
+    }
+    .fa-times{
+        margin-right:5px;
+        color: red;
+        cursor: pointer;
     }
 
     div.TabList .tab span {
