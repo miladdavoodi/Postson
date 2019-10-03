@@ -12,7 +12,7 @@
                     <i class="fas fa-ellipsis-h"></i>
                 </div>
                 <ul v-for="nrow in rw.list" v-bind:class="{show:(DirectoryActiveId==rw.id)}" class="sub">
-                    <li>
+                    <li v-on:click="setRow(nrow)">
                         <span v-bind:class="nrow.method" class="API POST">{{nrow.method}}</span>
                         <span class="_name">{{nrow.title}}</span>
                     </li>
@@ -36,7 +36,10 @@
             activeDirectory:function (id) {
                 let _DirId = this.DirectoryActiveId;
                 this.$store.dispatch('ACTIVE_DIRECTORY',((_DirId==id)?0:id));
-            }
+            },
+            setRow:function (row) {
+                this.$store.dispatch('SET_ROW',row);
+            },
         },
         data() {
             return {

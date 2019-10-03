@@ -8,6 +8,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         milad: 0,
+        Row:[],
         DirectoryActiveId: 10001,
         DirectoryList: [
             {
@@ -16,23 +17,28 @@ export default new Vuex.Store({
                 'list': [
                     {
                         'method': 'POST',
-                        'title': 'Result Charge'
+                        'title': 'Result Charge',
+                        'url':"http://localhost/ws/01"
                     },
                     {
                         'method': 'GET',
-                        'title': 'get Charge'
+                        'title': 'get Charge',
+                        'url':"http://localhost/ws/02"
                     },
                     {
                         'method': 'DEL',
-                        'title': 'Reverce Charge'
+                        'title': 'Reverce Charge',
+                        'url':"http://localhost/ws/03"
                     },
                     {
                         'method': 'PATCH',
-                        'title': 'Reverce Charge'
+                        'title': 'Reverce Charge',
+                        'url':"http://localhost/ws/04"
                     },
                     {
                         'method': 'POST',
-                        'title': 'Result Charge'
+                        'title': 'Result Charge',
+                        'url':"http://localhost/ws/05"
                     },
                 ]
             },
@@ -42,11 +48,13 @@ export default new Vuex.Store({
                 'list': [
                     {
                         'method': 'POST',
-                        'title': 'Result Charge'
+                        'title': 'Result Charge',
+                        'url':"http://localhost/ws/01"
                     },
                     {
                         'method': 'GET',
-                        'title': 'get Charge'
+                        'title': 'get Charge',
+                        'url':"http://localhost/ws/02"
                     }
                 ]
             }
@@ -57,11 +65,17 @@ export default new Vuex.Store({
         ACTIVE_DIRECTORY(store,ID) {
             store.commit("ACTIVE_DIRECTORY",ID)
         },
+        SET_ROW(store,ROW) {
+            store.commit("SET_ROW",ROW)
+        },
     },
 
     mutations: {
         ACTIVE_DIRECTORY(state,ID) {
             state.DirectoryActiveId = ID;
+        },
+        SET_ROW(state,ROW) {
+            state.Row = ROW;
         },
     },
 

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="title">Query Params  :: {{DirectoryActiveId}} </div>
+        <div class="title">Query Params </div>
         <div class="rowtbl">
             <div v-for="item in listParams" class="_row">
                 <div class="check">
@@ -18,7 +18,7 @@
     export default {
         computed: {
             ...mapState([
-                'DirectoryActiveId'
+                'Row'
             ]),
         },
 
@@ -31,9 +31,6 @@
         },
 
         methods: {
-            addc:function (){
-                this.$store.dispatch('increment');
-            },
             addParam: function () {
 
                 if (this.listParams[this.listParams.length - 1].KEY) {

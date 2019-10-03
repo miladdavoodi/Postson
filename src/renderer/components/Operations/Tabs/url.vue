@@ -2,17 +2,26 @@
     <div>
         <div class="box">
             <div class="methods">
-                <span CLASS="API POST">POST</span>
+                <span v-bind:class="Row.method" class="API">{{Row.method}}</span>
                 <i class="fas fa-caret-down"></i>
             </div>
             <div class="url">
-                <input placeholder="url the address" value="http://127.0.0.1:8945:ws/v2/blog/getpost">
+                <input placeholder="url the address" v-bind:value="Row.url">
             </div>
             <div class="send"><span>SEND</span></div>
         </div>
     </div>
 </template>
-
+<script>
+    import { mapState } from "vuex"
+    export default {
+        computed: {
+            ...mapState([
+                'Row'
+            ]),
+        },
+    }
+</script>
 <style scoped>
     div.box{
         height: 30px;
