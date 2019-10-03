@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="title">Query Params</div>
+        <div class="title">Query Params  :: {{DirectoryActiveId}} </div>
         <div class="rowtbl">
             <div v-for="item in listParams" class="_row">
                 <div class="check">
@@ -13,7 +13,15 @@
     </div>
 </template>
 <script>
+    import { mapState } from "vuex"
+
     export default {
+        computed: {
+            ...mapState([
+                'DirectoryActiveId'
+            ]),
+        },
+
         data() {
             return {
                 listParams: [
@@ -21,7 +29,11 @@
                 ]
             }
         },
+
         methods: {
+            addc:function (){
+                this.$store.dispatch('increment');
+            },
             addParam: function () {
 
                 if (this.listParams[this.listParams.length - 1].KEY) {
@@ -33,7 +45,11 @@
                 }
 
             }
-        }
+        },
+
+
+
+
     }
 </script>
 <style scoped>
@@ -97,7 +113,7 @@
         padding: 7px;
         width: calc(100% - 15px);
         background: none;
-        color: #ccc;
+        color: #fff;
         font-size: 12px;
         outline: none;
     }

@@ -24,60 +24,23 @@
 </template>
 <script>
 
+    import { mapState } from "vuex"
     export default {
-        components:{
+        computed: {
+            ...mapState([
+                'DirectoryActiveId',
+                'DirectoryList',
+            ]),
         },
         methods:{
             activeDirectory:function (id) {
                 let _DirId = this.DirectoryActiveId;
-                this.DirectoryActiveId = (_DirId==id)?0:id;
+                this.$store.dispatch('ACTIVE_DIRECTORY',((_DirId==id)?0:id));
             }
         },
         data() {
             return {
-                DirectoryActiveId:10001,
-                DirectoryList: [
-                    {
-                        'id':10001,
-                        'title': "Blog Post",
-                        'list': [
-                            {
-                                'method': 'POST',
-                                'title': 'Result Charge'
-                            },
-                            {
-                                'method': 'GET',
-                                'title': 'get Charge'
-                            },
-                            {
-                                'method': 'DEL',
-                                'title': 'Reverce Charge'
-                            },
-                            {
-                                'method': 'PATCH',
-                                'title': 'Reverce Charge'
-                            },
-                            {
-                                'method': 'POST',
-                                'title': 'Result Charge'
-                            },
-                        ]
-                    },
-                    {
-                        'id':10002,
-                        'title': "Category Post",
-                        'list': [
-                            {
-                                'method': 'POST',
-                                'title': 'Result Charge'
-                            },
-                            {
-                                'method': 'GET',
-                                'title': 'get Charge'
-                            }
-                        ]
-                    }
-                ]
+
             }
         }
     }

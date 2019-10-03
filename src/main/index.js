@@ -1,4 +1,5 @@
 import { app, BrowserWindow } from 'electron'
+import store from '../renderer/store'
 
 /**
  * Set `__static` path to static files in production
@@ -26,9 +27,6 @@ function createWindow () {
     width: 1114
   });
 
-
-
-
   mainWindow.loadURL(winURL)
 
   mainWindow.on('closed', () => {
@@ -45,7 +43,8 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
   }
-})
+});
+
 
 app.on('activate', () => {
   if (mainWindow === null) {
