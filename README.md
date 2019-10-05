@@ -1,4 +1,4 @@
-![](logo.jpg)
+![Image](logo.jpg){ width="100" style="display: block; margin: 0 auto" }
 
 <h1 align="center">
   Postson
