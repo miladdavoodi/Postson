@@ -1,7 +1,9 @@
 <template>
     <div>
-        <div class="title">Query Params </div>
+        <div class="title">Query Params</div>
         <div class="rowtbl">
+
+
             <div v-for="item in listParams" class="_row">
                 <div class="check">
                     <div class="checkbox"><i class="fas fa-check"></i></div>
@@ -9,6 +11,7 @@
                 <div class="key"><input v-on:keydown="addParam" v-model="item.KEY" placeholder="KEY"></div>
                 <div class="value"><input v-model="item.VALUE" placeholder="VALUE"></div>
             </div>
+
         </div>
     </div>
 </template>
@@ -21,12 +24,17 @@
                 'Row'
             ]),
         },
+        watch:{
+          'Row.Params':function(val) {
+                this.listParams = val;
+                this.addParam();
+
+            }
+        },
 
         data() {
             return {
-                listParams: [
-                    {KEY: "", VALUE: "", ACTIVE: false}
-                ]
+                listParams:[]
             }
         },
 
@@ -43,7 +51,6 @@
 
             }
         },
-
 
 
 
