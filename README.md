@@ -1,5 +1,3 @@
-->![Image](logo.jpg)<-
-
 <h1 align="center">
   Postson
 </h1>
