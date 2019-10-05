@@ -1,4 +1,4 @@
-![Image](logo.jpg){ width="100" style="display: block; margin: 0 auto" }
+->![Image](logo.jpg)<-
 
 <h1 align="center">
   Postson
