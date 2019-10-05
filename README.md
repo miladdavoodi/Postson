@@ -11,20 +11,22 @@ The Collaboration Platform for API Development
 
 ## 🚀 Quick start
 
-``` bash
-1. ** install dependencies
+
+1. ** install dependencies **
+``` shell
 npm install
-
-2. ** serve with hot reload at localhost:9080
-npm run dev
-
-3. ** build electron application for production
-npm run build
-
-
 ```
 
----
+2. ** serve with hot reload at localhost:9080 **
+``` shell
+npm run dev
+```
+
+3. ** build electron application for production **
+``` shell
+npm run build
+```
+
 
 ## 🧐 Features
 
