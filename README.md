@@ -1,21 +1,27 @@
-# postson
+<p align="center">
+  ![](logo.jpg)
+</p>
+<h1 align="center">
+  Postson
+</h1>
 
-> The Collaboration Platform for API Development
+The Collaboration Platform for API Development
 
 > The final design will do so
 > View of the future
+
 ![](ui.jpg)
 
-#### Build Setup
+## 🚀 Quick start
 
 ``` bash
-# install dependencies
+1. ** install dependencies
 npm install
 
-# serve with hot reload at localhost:9080
+2. ** serve with hot reload at localhost:9080
 npm run dev
 
-# build electron application for production
+3. ** build electron application for production
 npm run build
 
 
@@ -23,4 +29,6 @@ npm run build
 
 ---
 
-This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
+## 🧐 Features
+
+* coming soon ...
