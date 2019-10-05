@@ -1,6 +1,5 @@
-<p align="center">
-  ![](logo.jpg)
-</p>
+![](logo.jpg)
+
 <h1 align="center">
   Postson
 </h1>
