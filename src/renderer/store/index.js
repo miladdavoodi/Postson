@@ -12,14 +12,14 @@ export default new Vuex.Store({
         Row: [],
         Tabs: [
             {
-                '_id': 2143523,
+                '_id': 1,
                 'method': 'GET',
                 'title': 'Untitle',
                 'active': false,
                 'focused': true
             }
         ],
-        DirectoryActiveId: 10001,
+        DirectoryActiveId: 1021,
         DirectoryList: [
             {
                 'id': 10001,
@@ -101,8 +101,8 @@ export default new Vuex.Store({
         REMOVE_TAB(store, KEY) {
             store.commit("REMOVE_TAB", KEY)
         },
-        FOCUS_TAB(store, ID) {
-            store.commit("FOCUS_TAB", ID)
+        FOCUS_TAB(store, KEY) {
+            store.commit("FOCUS_TAB", KEY)
         },
         RUN_QUERY(store) {
             store.commit("RUN_QUERY")
@@ -121,22 +121,37 @@ export default new Vuex.Store({
         CLEAN_ALLTABS(state) {
             state.Tabs = [];
         },
-        FOCUS_TAB(state, ID) {
-            for (let key in state.Tabs) {
-                if (state.Tabs[key]._id == ID) {
-                    state.Tabs[key].focused = true;
+        FOCUS_TAB(state, KEY) {
+
+            for (let index in state.Tabs) {
+                if (KEY == index) {
+                    state.Tabs[index].focused = true;
+                    state.DirectoryActiveId = state.Tabs[index]._id;
                 } else {
-                    state.Tabs[key].focused = false;
+                    state.Tabs[index].focused = false;
                 }
             }
+
         },
         REMOVE_TAB(state, KEY) {
 
+            let isFindFocusedTab = false;
             for (let index in state.Tabs) {
                 if (index == KEY){
                     state.Tabs.splice(index, 1);
+                }else{
+                    if (state.Tabs[index].focused==true){
+                        isFindFocusedTab = true;
+                    }
                 }
             }
+
+            if (isFindFocusedTab==false && state.Tabs.length){
+                state.Tabs[(state.Tabs.length-1)].focused = true;
+                state.Tabs[(state.Tabs.length-1)].active = true;
+                state.DirectoryActiveId = state.Tabs[(state.Tabs.length-1)]._id;
+            }
+
 
         },
         SET_ROW(state, ROW) {
@@ -153,6 +168,8 @@ export default new Vuex.Store({
                     rw.active = false;
                     rw.focused = true;
 
+                    state.DirectoryActiveId = ROW.id;
+
                 } else {
                     rw.focused = false;
                 }
@@ -168,6 +185,8 @@ export default new Vuex.Store({
                     'active': false,
                     'focused': true
                 });
+
+                state.DirectoryActiveId = ROW.id;
 
             } else {
 

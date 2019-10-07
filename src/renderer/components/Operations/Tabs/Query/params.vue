@@ -2,8 +2,6 @@
     <div>
         <div class="title">Query Params</div>
         <div class="rowtbl">
-
-
             <div v-for="item in listParams" class="_row">
                 <div class="check">
                     <div class="checkbox"><i class="fas fa-check"></i></div>

@@ -2,11 +2,11 @@
     <div>
         <div class="TabList">
 
-            <div v-on:click="focusTab(row._id)" v-for="(row,key) in Tabs" v-bind:class="{active:row.focused}" class="tab animated fadeInUp">
+            <div v-for="(row,key) in Tabs" v-bind:class="{active:row.focused}" class="tab animated fadeInUp">
                 <div class="baseColorBg"></div>
-                <span v-bind:class="row.method" class="API POST">{{row.method}}</span>
-                <span>{{row.title}}  +  {{key}}</span>
-                <i v-on:click="removeTab((key))" class="fas fa-times"></i>
+                <span v-on:click="focusTab(key)" v-bind:class="row.method" class="API POST">{{row.method}}</span>
+                <span v-on:click="focusTab(key)">{{row.title}}</span>
+                <i v-on:click="removeTab(key)" class="fas fa-times"></i>
             </div>
             <div v-if="Tabs.length<=4" v-on:click="addTab" class="tab plus">
                 <span><i class="fa fa-plus"></i></span>
@@ -14,8 +14,6 @@
         </div>
 
         <div class="UrlMtd">
-
-
             <Url/>
         </div>
         <div>
@@ -33,7 +31,7 @@
         computed: {
             ...mapState([
                 'Tabs',
-                'LOG'
+                'DirectoryActiveId'
             ]),
         },
         data() {

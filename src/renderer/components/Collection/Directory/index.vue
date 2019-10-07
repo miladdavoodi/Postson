@@ -5,13 +5,13 @@
             <li v-for="rw in DirectoryList" >
                 <div class="title">
                     <div v-on:click="activeDirectory(rw.id)">
-                        <i v-bind:class="{'fa-caret-down':(DirectoryActiveId==rw.id),'fa-caret-right':(DirectoryActiveId!=rw.id)}" class="fas "></i>
+                        <i v-bind:class="{'fa-caret-down':((rw.list.find(x => x.id == DirectoryActiveId) || DirectoryActiveId == rw.id )),'fa-caret-right':(!(rw.list.find(x => x.id == DirectoryActiveId) || DirectoryActiveId == rw.id ))}" class="fas "></i>
                         <i class="fas fa-folder"></i>
                         <span>{{rw.title}} <i>/ {{rw.list.length}}</i></span>
                     </div>
                     <i class="fas fa-ellipsis-h"></i>
                 </div>
-                <ul v-for="nrow in rw.list" v-bind:class="{show:(DirectoryActiveId==rw.id)}" class="sub">
+                <ul v-for="nrow in rw.list" class="sub" v-bind:class="{show: (rw.list.find(x => x.id == DirectoryActiveId) || DirectoryActiveId == rw.id )}">
                     <li v-on:click="setRow(nrow)">
                         <span v-bind:class="nrow.method" class="API POST">{{nrow.method}}</span>
                         <span class="_name">{{nrow.title}}</span>
