@@ -1,20 +1,23 @@
 <template>
     <div>
         <div class="TabList">
-            <div v-for="row in TabsList" class="tab animated fadeInUp">
+
+            <div v-for="row in Tabs" v-bind:class="{active:row.focused}" class="tab animated fadeInUp">
                 <div class="baseColorBg"></div>
                 <span v-bind:class="row.method" class="API POST">{{row.method}}</span>
                 <span>{{row.title}}</span>
                 <i class="fas fa-times"></i>
             </div>
-            <div v-if="TabsList.length<=4" v-on:click="addTab" class="tab plus">
+            <div v-if="Tabs.length<=4" v-on:click="addTab" class="tab plus">
                 <span><i class="fa fa-plus"></i></span>
             </div>
         </div>
         <div class="UrlMtd">
+
             <Url/>
         </div>
         <div>
+
             <Query/>
         </div>
     </div>
@@ -22,28 +25,21 @@
 <script>
     import Url from './url';
     import Query from './Query/index';
+    import { mapState } from "vuex"
 
     export default {
+        computed: {
+            ...mapState([
+                'Tabs'
+            ]),
+        },
         data() {
             return {
-                TabsList: [
-                    {
-                        '_id': 2143522,
-                        'method': 'POST',
-                        'title': 'Result Charge',
-                    }
-                ]
+
             }
         },
         methods: {
             addTab: function () {
-
-                this.TabsList.push({
-                    '_id': 2143522,
-                    'method': 'GET',
-                    'title': 'Untitled',
-                });
-
 
             }
         },
@@ -56,6 +52,8 @@
 <style scoped>
     div.TabList {
         margin: 10px 0 0 10px;
+        height: 30px;
+        overflow: auto;
     }
 
     div.TabList .tab {

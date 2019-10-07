@@ -8,7 +8,7 @@
             <div class="url">
                 <input placeholder="url the address" v-bind:value="Row.url">
             </div>
-            <div class="send"><span>SEND</span></div>
+            <div v-on:click="$store.dispatch('CLEAN_ALLTABS')" class="send"><span>SEND</span></div>
         </div>
     </div>
 </template>
