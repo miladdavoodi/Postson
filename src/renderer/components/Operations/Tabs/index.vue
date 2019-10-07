@@ -2,17 +2,19 @@
     <div>
         <div class="TabList">
 
-            <div v-for="row in Tabs" v-bind:class="{active:row.focused}" class="tab animated fadeInUp">
+            <div v-on:click="focusTab(row._id)" v-for="(row,key) in Tabs" v-bind:class="{active:row.focused}" class="tab animated fadeInUp">
                 <div class="baseColorBg"></div>
                 <span v-bind:class="row.method" class="API POST">{{row.method}}</span>
-                <span>{{row.title}}</span>
-                <i class="fas fa-times"></i>
+                <span>{{row.title}}  +  {{key}}</span>
+                <i v-on:click="removeTab((key))" class="fas fa-times"></i>
             </div>
             <div v-if="Tabs.length<=4" v-on:click="addTab" class="tab plus">
                 <span><i class="fa fa-plus"></i></span>
             </div>
         </div>
+
         <div class="UrlMtd">
+
 
             <Url/>
         </div>
@@ -30,7 +32,8 @@
     export default {
         computed: {
             ...mapState([
-                'Tabs'
+                'Tabs',
+                'LOG'
             ]),
         },
         data() {
@@ -39,6 +42,12 @@
             }
         },
         methods: {
+            removeTab: function (key) {
+                this.$store.dispatch('REMOVE_TAB',key)
+            },
+            focusTab: function (id) {
+                this.$store.dispatch('FOCUS_TAB',id)
+            },
             addTab: function () {
 
             }
