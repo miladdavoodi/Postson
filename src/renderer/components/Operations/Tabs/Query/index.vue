@@ -2,13 +2,14 @@
     <div>
         <Tabs/>
         <div class="fixed">
-            <Params/>
+            <Params v-if="tabActive=='Params'"/>
+            <Headers v-if="tabActive=='Headers'"/>
             <Response/>
         </div>
     </div>
 </template>
 <style scoped>
-    .fixed{
+    .fixed {
         height: calc(100vh - 174px);
         overflow: auto;
     }
@@ -16,12 +17,25 @@
 <script>
     import Tabs from './tab';
     import Params from './params';
+    import Headers from './headers';
     import Response from './Response';
+
     export default {
-        components:{
+        data() {
+            return {
+                tabActive: "Params"
+            }
+        },
+        components: {
             Tabs,
             Params,
-            Response
+            Response,
+            Headers
+        },
+        methods: {
+            getTabActive(Name) {
+                this.tabActive = Name;
+            }
         }
     }
 </script>

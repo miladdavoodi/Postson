@@ -28,40 +28,47 @@ export default new Vuex.Store({
                     {
                         'id': 10002,
                         'method': 'POST',
-                        'title': 'Result Charge',
+                        'title': 'Result one1',
                         'url': "http://localhost/ws/01",
                         'Params': [
                             {KEY: 'category', VALUE: 'music', ACTIVE: false},
                             {KEY: 'limit', VALUE: 10, ACTIVE: false},
-                        ]
+                        ],
+                        'Headers': [
+                            {KEY: 'Content-Type', VALUE: 'application/json', ACTIVE: false},
+                        ],
                     },
                     {
                         'id': 10003,
                         'method': 'GET',
-                        'title': 'get Charge',
+                        'title': 'get Charge1',
                         'url': "http://localhost/ws/02",
-                        'Params': [{KEY: '', VALUE: '', ACTIVE: false}]
+                        'Params': [{KEY: '', VALUE: '', ACTIVE: false}],
+                        'Headers': []
                     },
                     {
                         'id': 10004,
                         'method': 'DEL',
                         'title': 'Reverce Charge',
                         'url': "http://localhost/ws/03",
-                        'Params': [{KEY: '', VALUE: '', ACTIVE: false}]
+                        'Params': [{KEY: '', VALUE: '', ACTIVE: false}],
+                        'Headers': []
                     },
                     {
                         'id': 10005,
                         'method': 'PATCH',
                         'title': 'Reverce Charge',
                         'url': "http://localhost/ws/04",
-                        'Params': [{KEY: '', VALUE: '', ACTIVE: false}]
+                        'Params': [{KEY: '', VALUE: '', ACTIVE: false}],
+                        'Headers': []
                     },
                     {
                         'id': 10006,
                         'method': 'POST',
                         'title': 'Result Charge',
                         'url': "http://localhost/ws/05",
-                        'Params': [{KEY: '', VALUE: '', ACTIVE: false}]
+                        'Params': [{KEY: '', VALUE: '', ACTIVE: false}],
+                        'Headers': []
                     },
                 ]
             },
@@ -74,14 +81,16 @@ export default new Vuex.Store({
                         'method': 'POST',
                         'title': 'Result Charge',
                         'url': "http://localhost/ws/01",
-                        'Params': [{KEY: '', VALUE: '', ACTIVE: false}]
+                        'Params': [{KEY: '', VALUE: '', ACTIVE: false}],
+                        'Headers': []
                     },
                     {
                         'id': 10009,
                         'method': 'GET',
                         'title': 'get Charge',
                         'url': "http://localhost/ws/02",
-                        'Params': [{KEY: '', VALUE: '', ACTIVE: false}]
+                        'Params': [{KEY: '', VALUE: '', ACTIVE: false}],
+                        'Headers': []
                     }
                 ]
             }

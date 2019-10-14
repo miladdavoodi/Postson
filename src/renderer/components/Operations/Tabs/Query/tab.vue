@@ -10,9 +10,14 @@
         data() {
             return {
                 tabs:[
-                    "Params" , "Authorization" ,"Headers","Body"
+                    "Params","Headers","Body"
                 ],
                 tabActive: "Params"
+            }
+        },
+        watch:{
+            'tabActive':function (TabName) {
+                this.$parent.getTabActive(TabName);
             }
         }
     }

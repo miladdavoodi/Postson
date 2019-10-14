@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div class="title">Query Params</div>
+        <div class="title">Headers</div>
 
         <div class="rowtbl">
-            <div v-for="item in listParams" class="_row">
+            <div v-for="item in listHeaders" class="_row">
                 <div class="check">
                     <div class="checkbox"><i class="fas fa-check"></i></div>
                 </div>
@@ -24,8 +24,8 @@
             ]),
         },
         watch:{
-          'Row.Params':function(val) {
-                this.listParams = val;
+            'Row.Headers':function(val) {
+                this.listHeaders = val;
                 this.addParam();
 
             }
@@ -33,15 +33,15 @@
 
         data() {
             return {
-                listParams:[]
+                listHeaders:[]
             }
         },
 
         methods: {
             addParam: function () {
 
-                if (this.listParams[this.listParams.length - 1].KEY) {
-                    this.listParams.push({
+                if (this.listHeaders[this.listHeaders.length - 1].KEY) {
+                    this.listHeaders.push({
                         KEY: "",
                         VALUE: "",
                         ACTIVE: false
@@ -51,7 +51,7 @@
             }
         },
         mounted() {
-            this.listParams = this.Row.Params;
+            this.listHeaders = this.Row.Headers;
         }
 
 
